@@ -1,0 +1,25 @@
+{% extends 'homepage.html' %}
+{% block main %}
+<form action="/" method="POST">
+<p>TO DO</p>
+<input type="text" name="todo" id="todo">
+<br><br>
+<p>START TIME</p>
+<input type="datetime-local" name="start" id="start">
+<br><br>
+<p>END TIME</p>
+<input type="datetime-local" name="end" id="end">
+<br><br>
+<input type="submit" value="Submit">
+</form>
+<hr>
+<h1>WELCOME TO HOME PAGE</h1>
+{% for i in Todo %}
+<h3>NUM: {{i.num}}</h3>
+<h2>TO-DO: {{i.todo}}</h2>
+<h2>START: {{i.start}}</h2>
+<h2>END: {{i.end}}</h2>
+<a href="/delete/{{i.num}}">DELETE</a>
+<hr>
+{% endfor %}
+{% endblock main %}
